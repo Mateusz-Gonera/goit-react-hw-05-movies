@@ -3,10 +3,11 @@ import {
   fetchSearch,
   fetchDetails,
   fetchCredits,
+  fetchReviews,
 } from 'utils/api/fetchMovies';
 
 export const SharedLayout = () => {
-  fetchCredits('414906').then(res => {
+  fetchDetails('414906').then(res => {
     const foo = res;
     console.log(foo);
   });
