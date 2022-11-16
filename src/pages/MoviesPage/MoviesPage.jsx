@@ -1,17 +1,22 @@
 import { useSearchParams } from 'react-router-dom';
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { useSearch } from 'utils/hooks/useSearch';
-import styles from './HomePage.module.css';
+import styles from './MoviesPage.module.css';
+import { Loader } from 'components/Loader/Loader';
+
+const SearchMovieList = lazy(() =>
+  import('components/SearchMovieList/SearchMovieList')
+);
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query');
+  const query = searchParams.get('query') ?? '';
   const { movies } = useSearch(query);
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    setSearchParams({ query: form.elements.movieName.value });
+    setSearchParams({ query: form.elements.movieName.value.toLowerCase() });
     form.reset();
   };
 
@@ -23,6 +28,9 @@ const MoviesPage = () => {
           Search
         </button>
       </form>
+      <Suspense fallback={<Loader />}>
+        <SearchMovieList movies={movies} />
+      </Suspense>
     </div>
   );
 };
