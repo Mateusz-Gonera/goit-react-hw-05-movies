@@ -1,4 +1,4 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import { useDetails } from 'utils/hooks/useDetails';
 import styles from './MovieDetailsPage.module.css';
 
@@ -9,7 +9,7 @@ const MovieDetailsPage = () => {
   return (
     <div>
       <NavLink className={styles.link}>← Go back</NavLink>
-      <div className={styles.container}>
+      <div className={styles.containerDetail}>
         <img />
         <div className={styles.information}>
           <h2 className={styles.title}>
@@ -25,6 +25,17 @@ const MovieDetailsPage = () => {
             {movie.genres.map(genre => genre.name).join(', ')}
           </p>
         </div>
+      </div>
+      <div className={containerInformation}>
+        <p className={styles.paragraph}>Additional Information</p>
+        <ul>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
