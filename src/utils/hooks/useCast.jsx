@@ -6,7 +6,7 @@ export const useCast = movieId => {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    fetchCredits('505642').then(res => {
+    fetchCredits(movieId).then(res => {
       setCast([...res]);
     });
   }, [movieId]);
