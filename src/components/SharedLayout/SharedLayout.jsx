@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
-import { fetchTrend } from 'utils/api/fetchMovies';
+import { fetchDetails } from 'utils/api/fetchMovies';
 
 export const SharedLayout = () => {
-  fetchTrend().then(res => {
-    const foo = res.results;
+  fetchDetails('414906').then(res => {
+    const foo = res;
     console.log(foo);
   });
   return (

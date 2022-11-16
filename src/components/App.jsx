@@ -9,6 +9,7 @@ export const App = () => {
     <Routes>
       <Route path="/goit-react-hw-05-movies" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
+        
       </Route>
     </Routes>
   );
