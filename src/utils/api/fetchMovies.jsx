@@ -41,3 +41,8 @@ export const fetchReviews = async id => {
 
   return res.data;
 };
+
+// fetchDetails('414906').then(res => {
+//   const foo = res;
+//   console.log(foo);
+// });
