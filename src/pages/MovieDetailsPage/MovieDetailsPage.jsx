@@ -1,5 +1,7 @@
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import { useDetails } from 'utils/hooks/useDetails';
+import { Loader } from 'components/Loader/Loader';
 import styles from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
@@ -37,6 +39,9 @@ const MovieDetailsPage = () => {
           </li>
         </ul>
       </div>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

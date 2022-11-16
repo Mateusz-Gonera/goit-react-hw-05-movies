@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
-import { fetchDetails } from 'utils/api/fetchMovies';
+import { fetchSearch } from 'utils/api/fetchMovies';
 import { Loader } from 'components/Loader/Loader';
 
 export const SharedLayout = () => {
-  fetchDetails('414906').then(res => {
-    const foo = res;
+  fetchSearch('batman').then(res => {
+    const foo = res.results;
     console.log(foo);
   });
   return (
