@@ -1,4 +1,4 @@
-import { Outlet, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Suspense } from 'react';
 import { useSearch } from 'utils/hooks/useSearch';
 import styles from './HomePage.module.css';
@@ -23,7 +23,6 @@ const MoviesPage = () => {
           Search
         </button>
       </form>
-      <Outlet />
     </div>
   );
 };
