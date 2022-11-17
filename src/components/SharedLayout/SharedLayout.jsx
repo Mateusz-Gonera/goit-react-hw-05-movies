@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
-// import { fetchCredits } from 'utils/api/fetchMovies';
 import { Loader } from 'components/Loader/Loader';
 import styled from 'styled-components';
+import { fetchReviews } from 'utils/api/fetchMovies';
 
 const CustomLink = styled(NavLink)`
   &.active {
@@ -12,10 +12,10 @@ const CustomLink = styled(NavLink)`
 `;
 
 export const SharedLayout = () => {
-  // fetchCredits('505642').then(res => {
-  //   const foo = res;
-  //   console.log(foo);
-  // });
+  fetchReviews('817758').then(res => {
+    const foo = res.results;
+    console.log(foo);
+  });
   return (
     <div className={styles.container}>
       <header className={styles.header}>

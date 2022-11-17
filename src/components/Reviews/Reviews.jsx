@@ -7,6 +7,12 @@ const Reviews = () => {
   const { reviews } = useReviews(movieId);
 
   if (!reviews) return <Loader />;
+  if (reviews === [])
+    return (
+      <div>
+        <p>We don't have any reviews for this movie</p>
+      </div>
+    );
 
   return (
     <div>
