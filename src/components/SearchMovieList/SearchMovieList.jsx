@@ -5,6 +5,8 @@ import styles from './SearchMovieList.module.css';
 const SearchMovieList = ({ movies }) => {
   const location = useLocation();
 
+  if (!movies) return;
+
   return (
     <ul>
       {movies.map(movie => {

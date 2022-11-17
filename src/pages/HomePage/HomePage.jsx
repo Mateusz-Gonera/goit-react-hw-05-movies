@@ -1,13 +1,14 @@
 import { useTrend } from 'utils/hooks/useTrend';
 import styles from './HomePage.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 
 const HomePage = () => {
   const { trendList } = useTrend();
   const location = useLocation();
 
+  if (!trendList) return <Loader />;
 
-  
   return (
     <main>
       <h1 className={styles.headOne}>Trending today</h1>

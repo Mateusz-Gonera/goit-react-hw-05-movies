@@ -1,9 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { useCast } from 'utils/hooks/useCast';
+import { Loader } from 'components/Loader/Loader';
 
 const Cast = () => {
   const { movieId } = useParams();
   const { cast } = useCast(movieId);
+
+  if (!cast) return <Loader />;
 
   return (
     <div>
