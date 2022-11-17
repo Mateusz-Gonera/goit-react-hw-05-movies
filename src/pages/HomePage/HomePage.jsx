@@ -6,6 +6,8 @@ const HomePage = () => {
   const { trendList } = useTrend();
   const location = useLocation();
 
+
+  
   return (
     <main>
       <h1 className={styles.headOne}>Trending today</h1>
