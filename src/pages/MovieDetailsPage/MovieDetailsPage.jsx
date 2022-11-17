@@ -1,5 +1,11 @@
 import { Suspense } from 'react';
-import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { useDetails } from 'utils/hooks/useDetails';
 import { Loader } from 'components/Loader/Loader';
 import styles from './MovieDetailsPage.module.css';
@@ -7,6 +13,9 @@ import styles from './MovieDetailsPage.module.css';
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { movie } = useDetails(movieId);
+  const location = useLocation();
+
+  const backHref = location.state?.from ?? '/goit-react-hw-05-movies';
 
   return (
     <div>

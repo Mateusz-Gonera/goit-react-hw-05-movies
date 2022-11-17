@@ -12,7 +12,7 @@ const HomePage = () => {
         {trendList.map(movie => {
           return (
             <li key={movie.id} className={styles.item}>
-              <NavLink to={`${movie.id}`}>
+              <NavLink to={`movies/${movie.id}`}>
                 <span>{movie.title}</span>
               </NavLink>
             </li>
