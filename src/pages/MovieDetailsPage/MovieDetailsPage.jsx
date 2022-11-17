@@ -21,7 +21,7 @@ const MovieDetailsPage = () => {
   //   if (location.state?.from) setBackHref(location.state.from);
   // }, [location.state, location.state.from]);
 
-  const backHref = location.state?.from ?? '/goit-react-hw-05-movies/movies';
+  const backHref = location.state?.from ?? '/movies';
 
   if (!movie) return <Loader />;
 
