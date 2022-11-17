@@ -21,9 +21,9 @@ const MoviesPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="movieName" />
+        <input className={styles.input} type="text" name="movieName" />
         <button type="submit" className={styles.submit}>
           Search
         </button>

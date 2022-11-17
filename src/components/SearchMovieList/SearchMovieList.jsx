@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
+import styles from './SearchMovieList.module.css';
 
 const SearchMovieList = ({ movies }) => {
   const location = useLocation();
@@ -8,7 +9,7 @@ const SearchMovieList = ({ movies }) => {
     <ul>
       {movies.map(movie => {
         return (
-          <li key={movie.id}>
+          <li className={styles.item} key={movie.id}>
             <Link to={`${movie.id}`} state={{ from: location }}>
               {movie.title}
             </Link>

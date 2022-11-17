@@ -13,10 +13,11 @@ const Cast = () => {
             <li key={actor.id}>
               <img
                 src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
-                alt="actor"
+                alt={`${actor.name}`}
+                width="90"
               />
-              <span>{actor.name}</span>
-              <span>Character: {actor.character}</span>
+              <p>{actor.name}</p>
+              <p>Character: {actor.character}</p>
             </li>
           );
         })}

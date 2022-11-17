@@ -18,15 +18,15 @@ const MovieDetailsPage = () => {
   const backHref = location.state?.from ?? '/goit-react-hw-05-movies/movies';
 
   return (
-    <div>
+    <div className={styles.container}>
       <NavLink to={backHref} className={styles.link}>
         ← Go back
       </NavLink>
       <div className={styles.containerDetail}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          alt="movie poster"
-          width="300"
+          alt={`${movie.title}`}
+          width="200"
         />
         <div className={styles.information}>
           <h2 className={styles.title}>
@@ -43,13 +43,13 @@ const MovieDetailsPage = () => {
           </p>
         </div>
       </div>
-      <div className={styles.containerInformation}>
+      <div className={styles.containerAddinfo}>
         <p className={styles.paragraph}>Additional Information</p>
         <ul>
-          <li>
+          <li className={styles.itemLink}>
             <Link to="cast">Cast</Link>
           </li>
-          <li>
+          <li className={styles.itemLink}>
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
