@@ -1,9 +1,10 @@
 import { useTrend } from 'utils/hooks/useTrend';
 import styles from './HomePage.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const HomePage = () => {
   const { trendList } = useTrend();
+  const location = useLocation();
 
   return (
     <main>
@@ -12,7 +13,7 @@ const HomePage = () => {
         {trendList.map(movie => {
           return (
             <li key={movie.id} className={styles.item}>
-              <NavLink to={`movies/${movie.id}`}>
+              <NavLink to={`movies/${movie.id}`} state={{ from: location }}>
                 <span>{movie.title}</span>
               </NavLink>
             </li>

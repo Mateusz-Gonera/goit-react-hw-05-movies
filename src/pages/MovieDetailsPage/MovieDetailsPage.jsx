@@ -15,11 +15,13 @@ const MovieDetailsPage = () => {
   const { movie } = useDetails(movieId);
   const location = useLocation();
 
-  const backHref = location.state?.from ?? '/goit-react-hw-05-movies';
+  const backHref = location.state?.from ?? '/goit-react-hw-05-movies/movies';
 
   return (
     <div>
-      <NavLink className={styles.link}>← Go back</NavLink>
+      <NavLink to={backHref} className={styles.link}>
+        ← Go back
+      </NavLink>
       <div className={styles.containerDetail}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
