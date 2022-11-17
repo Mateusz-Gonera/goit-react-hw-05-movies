@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { useSearch } from 'utils/hooks/useSearch';
 import styles from './MoviesPage.module.css';
 import { Loader } from 'components/Loader/Loader';
+import { Searchbar } from 'components/Searchbar/Searchbar';
 
 const SearchMovieList = lazy(() =>
   import('components/SearchMovieList/SearchMovieList')
@@ -22,12 +23,7 @@ const MoviesPage = () => {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <input className={styles.input} type="text" name="movieName" />
-        <button type="submit" className={styles.submit}>
-          Search
-        </button>
-      </form>
+      <Searchbar handleSubmit={handleSubmit} />
       <Suspense fallback={<Loader />}>
         <SearchMovieList movies={movies} />
       </Suspense>
