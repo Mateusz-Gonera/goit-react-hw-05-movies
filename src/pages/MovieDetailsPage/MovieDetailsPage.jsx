@@ -4,22 +4,26 @@ import {
   NavLink,
   Outlet,
   useLocation,
+  // useNavigate,
   useParams,
 } from 'react-router-dom';
 import { useDetails } from 'utils/hooks/useDetails';
 import { Loader } from 'components/Loader/Loader';
 import styles from './MovieDetailsPage.module.css';
-// import { useState, useEffect } from 'react';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { movie } = useDetails(movieId);
   const location = useLocation();
-  // const [backHref, setBackHref] = useState('');
+  // const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (location.state?.from) setBackHref(location.state.from);
-  // }, [location.state, location.state.from]);
+  // const backHref = () => {
+  //   if (location.state?.from) {
+  //     navigate(-1);
+  //   } else {
+  //     navigate(-2);
+  //   }
+  // };
 
   const backHref = location.state?.from ?? '/movies';
 
