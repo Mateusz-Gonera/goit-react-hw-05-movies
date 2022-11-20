@@ -3,7 +3,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 import styles from './SharedLayout.module.css';
 import { Loader } from 'components/Loader/Loader';
 import styled from 'styled-components';
-import { fetchReviews } from 'utils/api/fetchMovies';
 
 const CustomLink = styled(NavLink)`
   &.active {
@@ -12,10 +11,6 @@ const CustomLink = styled(NavLink)`
 `;
 
 export const SharedLayout = () => {
-  fetchReviews('817758').then(res => {
-    const foo = res.results;
-    console.log(foo);
-  });
   return (
     <div className={styles.container}>
       <header className={styles.header}>
